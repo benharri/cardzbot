@@ -3,7 +3,7 @@ import os
 import requests
 
 token = os.environ['TELEGRAM_API_TOKEN']
-tg_url = 'https://api.telegram.org/bot{token}'.format(token=token)
+tg_url = 'https://api.telegram.org/bot{token}/'.format(token=token)
 me_url = 'cardzbot.herokuapp.com/'
 
 app = Flask(__name__)
