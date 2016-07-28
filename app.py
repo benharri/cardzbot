@@ -1,4 +1,4 @@
-import flask
+import flask, Response
 import os
 
 token = os.environ['TELEGRAM_API_TOKEN']
@@ -13,7 +13,7 @@ def index():
 
 @app.route('/{token}'.format(token=token))
 def token_route():
-    pass
+    return Response(status=200)
 
 if __name__ == "__main__":
     app.run()
