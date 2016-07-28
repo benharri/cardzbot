@@ -20,7 +20,7 @@ def token_route():
 def read_update(update):
     chat_id = update['message']['chat']['id']
     msg = {'chat_id': chat_id, 'text': str(update)}
-    post(api_url+'sendMessage', data=msg)
+    post(tg_url+'sendMessage', data=msg)
 
 def set_webhook():
     url = me_url+token
