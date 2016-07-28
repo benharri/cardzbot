@@ -14,7 +14,13 @@ def index():
 
 @app.route('/{token}'.format(token=token))
 def token_route():
+    read_update(request.json)
     return Response(status=200)
+
+def read_update(update):
+    chat_id = update['message']['chat']['id']
+    msg = {'chat_id': chat_id, 'text': str(update)}
+    post(api_url+'sendMessage', data=msg)
 
 def set_webhook():
     url = me_url+token
