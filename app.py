@@ -4,7 +4,7 @@ from requests import post, get
 
 token = os.environ['TELEGRAM_API_TOKEN']
 tg_url = 'https://api.telegram.org/bot{token}/'.format(token=token)
-me_url = 'cardzbot.herokuapp.com/'
+me_url = 'bot.benhh.com/'
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def token_route():
     return Response(status=200)
 
 def set_webhook():
-    url = me_url+token 
+    url = me_url+token
     data = {'url':url}
     post(tg_url+'setWebhook', data=data)
 
